@@ -3,10 +3,17 @@ import PropTypes from 'prop-types'
 import EmailPropTypes from '../PropTypes'
 
 export default function Box({ children, ...props }) {
+  const styleProp = props.style || {};
+
+  const overrideStyle = {};
+  if (styleProp.width === '100%') {
+    overrideStyle.width = '100% !important' // fix for gmail mobile app overriding 100% tables
+  }
+
   return (
-    <table {...props}>
+    <table {...props} style={{ ...styleProp, ...overrideStyle }}>
       <tbody>
-        {children}
+      {children}
       </tbody>
     </table>
   )
