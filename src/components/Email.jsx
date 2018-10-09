@@ -22,6 +22,7 @@ export default function Email(props) {
           padding: 0,
           WebkitTextSizeAdjust: '100%',
           MsTextSizeAdjust: '100%',
+          minWidth: '100vw',
           ...props.bodyStyle,
         }}
       >
