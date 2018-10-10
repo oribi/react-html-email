@@ -4,11 +4,6 @@ import EmailPropTypes from '../PropTypes'
 import Box from './Box'
 import Item from './Item'
 
-export const STYLE_SHIM_FOR_NEW_GMAIL_APP = `
-  @media only screen and (max-width: 599px) {
-    body { min-width: 100vw; }
-  }`;
-
 // inspired by http://htmlemailboilerplate.com
 export default function Email(props) {
   // default nested 600px wide outer table container (see http://templates.mailchimp.com/development/html/)
@@ -19,13 +14,13 @@ export default function Email(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{props.title}</title>
         <style type="text/css">
-          { STYLE_SHIM_FOR_NEW_GMAIL_APP }
           { !!props.headCSS && props.headCSS }
         </style>}
       </head>
       <body
         style={{
           width: '100%',
+          minWidth: '100%',
           margin: 0,
           padding: 0,
           WebkitTextSizeAdjust: '100%',
