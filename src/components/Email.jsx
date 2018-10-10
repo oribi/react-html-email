@@ -15,7 +15,7 @@ export default function Email(props) {
         <title>{props.title}</title>
         <style type="text/css">
           { !!props.headCSS && props.headCSS }
-        </style>}
+        </style>
       </head>
       <body
         style={{
@@ -37,7 +37,7 @@ export default function Email(props) {
         </Box>
       </body>
     </html>
-  )
+  );
 }
 
 Email.propTypes = {
