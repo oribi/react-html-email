@@ -14,10 +14,23 @@ export default function Email(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{props.title}</title>
         <style type="text/css">
+          { props.disableAutoGmailLinkStyling &&
+            `
+              u + #body a {
+                  color: inherit;
+                  text-decoration: none;
+                  font-size: inherit;
+                  font-family: inherit;
+                  font-weight: inherit;
+                  line-height: inherit;
+              }
+            `
+          }
           { !!props.headCSS && props.headCSS }
         </style>
       </head>
       <body
+        id="body"
         style={{
           width: '100%',
           minWidth: '100%',
@@ -53,7 +66,8 @@ Email.propTypes = {
   valign: PropTypes.oneOf(['top', 'middle', 'bottom']),
   bodyStyle: EmailPropTypes.style,
   children: PropTypes.node,
-}
+  disableAutoGmailLinkStyling: PropTypes.bool,
+};
 
 Email.defaultProps = {
   lang: 'en',
