@@ -1,5 +1,5 @@
 {
-  "name": "react-html-email",
+  "name": "@oribi/react-html-email",
   "description": "Create elegant HTML email templates using React.",
   "version": "3.0.0",
   "keywords": [
